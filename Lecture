@@ -1,3 +1,20 @@
+// Session 2
+
+// type conversion = change the datatype of a value to another datatype
+// (number, string, boolean)
+
+let x = "";
+let y = "25";
+let z = "";
+
+x = Number(x);
+y = String(y);
+z = Boolean(z);
+
+console.log(x, typeof x);
+console.log(y, typeof y);
+console.log(z, typeof z);
+
 // Session 1
 //index.js
 // How to accecpt user input
