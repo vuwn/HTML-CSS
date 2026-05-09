@@ -1,43 +1,21 @@
-// COUNTER PROGRAM
+// Math = built-in object that has properties and methods for mathematical constants and functions. Not a function object.
 
-// // It's not optimized but it works=))
-// const decreaseBtn = document.getElementById("decreaseBtn");
-// decreaseBtn.onclick = () => {
-//   const counter = document.getElementById("countLabel");
-//   counter.innerText = parseInt(counter.innerText) - 1;
-// };
-// // parseInt(): converts a string to an integer
-// // innnerText: gets or sets the text content of an element
-// const increaseBtn = document.getElementById("increaseBtn");
-// increaseBtn.onclick = () => {
-//   const counter = document.getElementById("countLabel");
-//   counter.innerText = parseInt(counter.innerText) + 1;
-// };
+let x = 0;
+let y = 2;
+let z = 3;
 
-// const resetBtn = document.getElementById("resetBtn");
-// resetBtn.onclick = () => {
-//   const counter = document.getElementById("countLabel");
-//   counter.innerText = 0;
-// };
+// Math.round() - rounds a number to the nearest integer
+// Math.floor() - rounds a number down to the nearest integer
+// Math.ceil() - rounds a number up to the nearest integer
+// Math.trunc() - returns the integer part of a number by removing any fractional digits
+// Math.sign() - returns the sign of a number, indicating whether the number is positive, negative, or zero like this: 5 => 1, -5 => -1, 0 => 0
+// Math.pow() - returns the base to the exponent power, that is, base^exponent
+// Math.sqrt() - returns the square root of a number
+// Math.abs() - returns the absolute value of a number
+// Math.max() - returns the largest of zero or more numbers
+// Math.min() - returns the smallest of zero or more numbers
+// Math.sin() - returns the sine of a number
+// Math.cos() - returns the cosine of a number
+// Math.tan() - returns the tangent of a number
 
-// OPTIMIZED VERSION
-const decreaseBtn = document.getElementById("decreaseBtn");
-const resetBtn = document.getElementById("resetBtn");
-const increaseBtn = document.getElementById("increaseBtn");
-const countLabel = document.getElementById("countLabel");
-let count = 0;
-
-decreaseBtn.onclick = () => {
-  count--;
-  countLabel.textContent = count;
-};
-increaseBtn.onclick = () => {
-  count++;
-  countLabel.textContent = count;
-};
-resetBtn.onclick = () => {
-  count = 0;
-  countLabel.textContent = count;
-};
-
-// getElementById: returns the element with the specified ID
+console.log(Math.max(x, y, z));
