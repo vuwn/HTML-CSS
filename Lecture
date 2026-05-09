@@ -1,0 +1,18 @@
+// Session 1
+//index.js
+// How to accecpt user input
+
+// 1, EASY WAY = window prompt
+// 2, PROFESSIONAL WAY = HTML text box
+
+// 1, EASY WAY
+
+// const username = prompt("What is your name?");
+// console.log(`Your name is: ${username}`);
+
+// 2, PROFESSIONAL WAY
+
+document.getElementById("myButton").onclick = () => {
+  const username = document.getElementById("myText").value;
+  document.getElementById("myH1").textContent = `Welcome ${username}!`;
+};
