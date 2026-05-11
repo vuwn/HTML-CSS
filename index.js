@@ -1,15 +1,22 @@
-// ternary operator =  a shortcut to if{} and else{} statements
-//                     helps to assign a variable based on a condition
-//                     condition ? codeIfTrue : codeIfFalse
+// SWITCH = can be an efficient replacement to many else if statements
 
-// let age = 17;
-// let message = age >= 18 ? "You are an adult" : "You are a minor";
-// console.log(message);
+let testScore = 55;
+let letterGrade;
 
-// let time = 5;
-// let greeting = time < 12 ? "Good morning" : "Good afternoon";
-// console.log(greeting);
-
-// let status = false;
-// let isStudent = status ? "You are a student" : "You are not a student";
-// console.log(isStudent);
+switch (true) {
+  case testScore >= 90:
+    letterGrade = "A";
+    break;
+  case testScore >= 80:
+    letterGrade = "B";
+    break;
+  case testScore >= 70:
+    letterGrade = "C";
+    break;
+  case testScore >= 60:
+    letterGrade = "D";
+    break;
+  default:
+    letterGrade = "F";
+}
+console.log(letterGrade);
