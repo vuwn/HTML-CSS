@@ -1,28 +1,15 @@
-// .checked = property that determines the checked state of
-//            an HTML checkbox or radio button elemment
+// ternary operator =  a shortcut to if{} and else{} statements
+//                     helps to assign a variable based on a condition
+//                     condition ? codeIfTrue : codeIfFalse
 
-const subcribeBtn = document.getElementById("subcribeBtn");
-const visaBtn = document.getElementById("visaBtn");
-const masterCardBtn = document.getElementById("masterCardBtn");
-const paypalBtn = document.getElementById("paypalBtn");
-const myButton = document.getElementById("myButton");
-const subResult = document.getElementById("subResult");
-const payResult = document.getElementById("payResult");
+// let age = 17;
+// let message = age >= 18 ? "You are an adult" : "You are a minor";
+// console.log(message);
 
-myButton.onclick = () => {
-  if (subcribeBtn.checked) {
-    subResult.textContent = `You are subcribed`;
-  } else {
-    subResult.textContent = `You are not subcribed`;
-  }
+// let time = 5;
+// let greeting = time < 12 ? "Good morning" : "Good afternoon";
+// console.log(greeting);
 
-  if (visaBtn.checked) {
-    payResult.textContent = `You are paying with Visa`;
-  } else if (masterCardBtn.checked) {
-    payResult.textContent = `You are paying with MasterCard`;
-  } else if (paypalBtn.checked) {
-    payResult.textContent = `You are paying with PayPal`;
-  } else {
-    payResult.textContent = "You must select a payment method";
-  }
-};
+// let status = false;
+// let isStudent = status ? "You are a student" : "You are not a student";
+// console.log(isStudent);
