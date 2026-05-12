@@ -1,22 +1,23 @@
-// SWITCH = can be an efficient replacement to many else if statements
+// Method chaining = Calling one method after another
+//                  in one line of code
 
-let testScore = 55;
-let letterGrade;
+let username = window.prompt("Enter your username:");
 
-switch (true) {
-  case testScore >= 90:
-    letterGrade = "A";
-    break;
-  case testScore >= 80:
-    letterGrade = "B";
-    break;
-  case testScore >= 70:
-    letterGrade = "C";
-    break;
-  case testScore >= 60:
-    letterGrade = "D";
-    break;
-  default:
-    letterGrade = "F";
-}
-console.log(letterGrade);
+// ----- NO METHOD CHAINING -----
+
+// username = username.trim();
+// let letter = username.charAt(0);
+// letter = letter.toUpperCase();
+
+// let extraChars = username.slice(1); // a|bcd ..
+// extraChars = extraChars.toLowerCase();
+// username = letter + extraChars;
+// console.log(username);
+
+// ----- NO METHOD CHAINING -----
+
+username =
+  username.trim().charAt(0).toUpperCase() +
+  username.trim().slice(1).toLowerCase();
+
+console.log(username);
