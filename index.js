@@ -1,23 +1,28 @@
-// Method chaining = Calling one method after another
-//                  in one line of code
+// NUMBER GUESS GAME
 
-let username = window.prompt("Enter your username:");
+let guess,
+  attempts = 0,
+  answer;
+let min = 1,
+  max = 100;
+let running = true;
+answer = Math.round(Math.random() * (max - min));
+console.log(answer);
 
-// ----- NO METHOD CHAINING -----
-
-// username = username.trim();
-// let letter = username.charAt(0);
-// letter = letter.toUpperCase();
-
-// let extraChars = username.slice(1); // a|bcd ..
-// extraChars = extraChars.toLowerCase();
-// username = letter + extraChars;
-// console.log(username);
-
-// ----- NO METHOD CHAINING -----
-
-username =
-  username.trim().charAt(0).toUpperCase() +
-  username.trim().slice(1).toLowerCase();
-
-console.log(username);
+while (running) {
+  guess = window.prompt(`Guess a number between ${min} - ${max}`);
+  if (guess < min || guess > max) {
+    window.alert(`Please enter a number between ${min} - ${max}`);
+  } else if (guess < answer) {
+    window.alert(`Too low! Try again!`);
+    attempts++;
+  } else if (guess > answer) {
+    window.alert(`Too high! Try again!`);
+    attempts++;
+  } else if (guess == answer) {
+    window.alert(
+      `You are correct! The answer was ${answer} with ${attempts} attempts`
+    );
+    running = false;
+  }
+}
