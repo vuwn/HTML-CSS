@@ -1,28 +1,19 @@
-// // function = A section of reusable code
-// //            Declared code once, use it whenever you want
-// //            Call the function to execute that code
+// TEMPERATURE CONVERSION PROGRAM
 
-// // const happyBirthday = (name, age) => {
-// //   console.log("Happy Birthday to you");
-// //   console.log("Happy Birthday to you");
-// //   console.log(`Happy Birthday dear ${name}`);
-// //   console.log(`You are ${age} years old`);
-// // };
+const textBox = document.getElementById("textBox");
+const toFahrenheit = document.getElementById("toFahrenheit");
+const toCelsius = document.getElementById("toCelsius");
+const convertResult = document.getElementById("convertResult");
 
-// // happyBirthday("Vincent", 18);
-// // happyBirthday("Ryan", 35);
-
-// // const isEven = (number) => {
-// //   if (number % 2 === 0) {
-// //     return true;
-// //   } else {
-// //     return false;
-// //   }
-// // };
-
-// // console.log(isEven(1243));
-
-// const inValidEmail = (email) => {
-//   return email.includes(`@`) ? true : false;
-// };
-// console.log(inValidEmail("vincent@gmail.com"));
+let temp;
+const convert = () => {
+  if (toFahrenheit.checked) {
+    temp = (9 / 5) * textBox.value + 32;
+    convertResult.textContent = `${temp.toFixed(1)}°F`;
+  } else if (toCelsius.checked) {
+    temp = (5 / 9) * (textBox.value - 32);
+    convertResult.textContent = `${temp.toFixed(1)}°C`;
+  } else {
+    convertResult.textContent = "Please select a conversion type.";
+  }
+};
