@@ -1,28 +1,28 @@
-// NUMBER GUESS GAME
+// // function = A section of reusable code
+// //            Declared code once, use it whenever you want
+// //            Call the function to execute that code
 
-let guess,
-  attempts = 0,
-  answer;
-let min = 1,
-  max = 100;
-let running = true;
-answer = Math.round(Math.random() * (max - min));
-console.log(answer);
+// // const happyBirthday = (name, age) => {
+// //   console.log("Happy Birthday to you");
+// //   console.log("Happy Birthday to you");
+// //   console.log(`Happy Birthday dear ${name}`);
+// //   console.log(`You are ${age} years old`);
+// // };
 
-while (running) {
-  guess = window.prompt(`Guess a number between ${min} - ${max}`);
-  if (guess < min || guess > max) {
-    window.alert(`Please enter a number between ${min} - ${max}`);
-  } else if (guess < answer) {
-    window.alert(`Too low! Try again!`);
-    attempts++;
-  } else if (guess > answer) {
-    window.alert(`Too high! Try again!`);
-    attempts++;
-  } else if (guess == answer) {
-    window.alert(
-      `You are correct! The answer was ${answer} with ${attempts} attempts`
-    );
-    running = false;
-  }
-}
+// // happyBirthday("Vincent", 18);
+// // happyBirthday("Ryan", 35);
+
+// // const isEven = (number) => {
+// //   if (number % 2 === 0) {
+// //     return true;
+// //   } else {
+// //     return false;
+// //   }
+// // };
+
+// // console.log(isEven(1243));
+
+// const inValidEmail = (email) => {
+//   return email.includes(`@`) ? true : false;
+// };
+// console.log(inValidEmail("vincent@gmail.com"));
