@@ -1,19 +1,18 @@
-// TEMPERATURE CONVERSION PROGRAM
+// DICE ROLLER PROGRAM
 
-const textBox = document.getElementById("textBox");
-const toFahrenheit = document.getElementById("toFahrenheit");
-const toCelsius = document.getElementById("toCelsius");
-const convertResult = document.getElementById("convertResult");
+function rollDice() {
+  const numOfDice = document.getElementById("numOfDice").value;
+  const diceResult = document.getElementById("diceResult");
+  const diceImages = document.getElementById("diceImages");
+  const values = [];
+  const images = [];
 
-let temp;
-const convert = () => {
-  if (toFahrenheit.checked) {
-    temp = (9 / 5) * textBox.value + 32;
-    convertResult.textContent = `${temp.toFixed(1)}°F`;
-  } else if (toCelsius.checked) {
-    temp = (5 / 9) * (textBox.value - 32);
-    convertResult.textContent = `${temp.toFixed(1)}°C`;
-  } else {
-    convertResult.textContent = "Please select a conversion type.";
+  for (let i = 0; i < numOfDice; i++) {
+    const value = Math.floor(Math.random() * 6) + 1;
+    values.push(value);
+    images.push(`<img src="dice_images/${value}.png" alt ="Dice ${value}">`);
   }
-};
+
+  diceResult.textContent = `dice: ${values.join(",")}`;
+  diceImages.innerHTML = images.join("");
+}

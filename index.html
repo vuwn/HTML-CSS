@@ -3,24 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Website</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form>
-      <h1>Temperature conversion:</h1>
-      <input type="number" id="textBox" value="0" /> <br />
-
-      <input type="radio" id="toFahrenheit" name="unit" />
-      <lable for="toFahrenheit">Calsius -> Fehrenheit</lable> <br />
-
-      <input type="radio" id="toCelsius" name="unit" />
-      <lable for="toCelsius">Fehrenheit -> Calsius</lable> <br />
-
-      <button type="button" onclick="convert()">Check</button>
-
-      <p id="convertResult">Input a unit</p>
-    </form>
+    <div id="container">
+      <h1>Dice Roller</h1>
+      <label># of dice</label>
+      <input type="number" id="numOfDice" value="1" min="1" />
+      <button onclick="rollDice()">Roll Dice</button>
+      <div id="diceResult"></div>
+      <div id="diceImages"></div>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
