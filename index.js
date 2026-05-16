@@ -1,22 +1,30 @@
-// constructor = special method for defining the
-//               properties and methods of objects
+// class = provides a more structured and cleaner way to work with objects
 
-function Car(make, model, years, color) {
-  this.make = make;
-  this.model = model;
-  this.years = years;
-  this.color = color;
+class Product {
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
+  }
+
+  displayProduct() {
+    console.log(`Product: ${this.name}`);
+    console.log(`Price: $${this.price}`);
+  }
+
+  calculateToTal(saleTax) {
+    return this.price + this.price * saleTax;
+  }
 }
 
-const car1 = new Car("Toyota", "Camry", 2020, "red");
-const car2 = new Car("Honda", "Civic", 2019, "blue");
+const saleTax = 0.5;
 
-console.log(car1.make);
-console.log(car1.model);
-console.log(car1.years);
-console.log(car1.color);
+const product1 = new Product("Laptop", 999.99);
+const product2 = new Product("Phone", 399.99);
+const product3 = new Product("Television", 1999.99);
 
-console.log(car2.make);
-console.log(car2.model);
-console.log(car2.years);
-console.log(car2.color);
+product1.displayProduct();
+// product2.displayProduct();
+// product3.displayProduct();
+
+const total = product1.calculateToTal(saleTax);
+console.log(`Total price (with tax): $${total.toFixed(2)}`);
