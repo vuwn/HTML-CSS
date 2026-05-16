@@ -1,30 +1,54 @@
-// class = provides a more structured and cleaner way to work with objects
-
-class Product {
-  constructor(name, price) {
-    this.name = name;
-    this.price = price;
+class Person {
+  constructor(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
   }
 
-  displayProduct() {
-    console.log(`Product: ${this.name}`);
-    console.log(`Price: $${this.price}`);
+  set firstName(newFirstName) {
+    if (typeof newFirstName === "string" && newFirstName.length > 0) {
+      this._firstName = newFirstName;
+    } else {
+      console.error("First name must be a non_empty string");
+    }
   }
 
-  calculateToTal(saleTax) {
-    return this.price + this.price * saleTax;
+  set lastName(newLastName) {
+    if (typeof newLastName === "string" && newLastName.length > 0) {
+      this._lastName = newLastName;
+    } else {
+      console.error("Last name must be a non_empty string");
+    }
+  }
+
+  set age(newAge) {
+    if (typeof newAge === "number" && newAge > 0) {
+      this._age = newAge;
+    } else {
+      console.error("Age must be a positive number");
+    }
+  }
+
+  get firstName() {
+    return this._firstName;
+  }
+
+  get lastName() {
+    return this._lastName;
+  }
+
+  get fullName() {
+    return this._firstName + " " + this._lastName;
+  }
+
+  get age() {
+    return this._age;
   }
 }
 
-const saleTax = 0.5;
+const person = new Person("Vincent", "Nguyen", 18);
 
-const product1 = new Product("Laptop", 999.99);
-const product2 = new Product("Phone", 399.99);
-const product3 = new Product("Television", 1999.99);
-
-product1.displayProduct();
-// product2.displayProduct();
-// product3.displayProduct();
-
-const total = product1.calculateToTal(saleTax);
-console.log(`Total price (with tax): $${total.toFixed(2)}`);
+console.log(person.firstName);
+console.log(person.lastName);
+console.log(person.fullName);
+console.log(person.age);
