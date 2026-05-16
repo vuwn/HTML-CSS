@@ -1,38 +1,22 @@
-// object = A collection of ralated properties and/or methods
-//           Can represent real world objects (people, products, places...)
-//           objects = {key: value,
-//                      function()}
+// constructor = special method for defining the
+//               properties and methods of objects
 
-// const person1 = {
-//   firstName: "Tayler",
-//   lastName: "Smith",
-//   age: 30,
-//   isEmployed: true,
-//   sayHello: function () {
-//     console.log("Hi, I am Taylor Smith");
-//   },
-// };
+function Car(make, model, years, color) {
+  this.make = make;
+  this.model = model;
+  this.years = years;
+  this.color = color;
+}
 
-// person1.sayHello();
+const car1 = new Car("Toyota", "Camry", 2020, "red");
+const car2 = new Car("Honda", "Civic", 2019, "blue");
 
-// this = reference to the object where THIS is used
-//        the objects depends on the imediate context
-//        person.name = this.name
+console.log(car1.make);
+console.log(car1.model);
+console.log(car1.years);
+console.log(car1.color);
 
-const person2 = {
-  firstName: "Charles",
-  favFood: "Pizza",
-  age: 30,
-  sonName: "Charlies",
-  isEmployed: true,
-  eating: function () {
-    console.log(`Hi, I am Taylor Smith, I like eating ${this.favFood}`);
-  },
-  sayHello: function () {
-    console.log(`Hello he is my son, his name is ${this.sonName}`);
-  },
-};
-
-// person2.eating();
-// person2.sayHello();
-console.log(this);
+console.log(car2.make);
+console.log(car2.model);
+console.log(car2.years);
+console.log(car2.color);
