@@ -1,52 +1,38 @@
-// RANDOM PASSWORD GENERATOR
+// object = A collection of ralated properties and/or methods
+//           Can represent real world objects (people, products, places...)
+//           objects = {key: value,
+//                      function()}
 
-function generatePassword(
-  length,
-  includeLowercase,
-  includeUppercase,
-  includeNumbers,
-  includeSymbols
-) {
-  console.log("Generated password: ");
+// const person1 = {
+//   firstName: "Tayler",
+//   lastName: "Smith",
+//   age: 30,
+//   isEmployed: true,
+//   sayHello: function () {
+//     console.log("Hi, I am Taylor Smith");
+//   },
+// };
 
-  const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
-  const uppercaseChars = "ABCDEFGHIJKELMNOQRSTUVWXYZ";
-  const numberChars = "0123456789";
-  const symbolsChars = "!@#$%^&*()_+-=";
+// person1.sayHello();
 
-  let allowedChars = "";
-  let password = "";
+// this = reference to the object where THIS is used
+//        the objects depends on the imediate context
+//        person.name = this.name
 
-  allowedChars += includeLowercase ? lowercaseChars : "";
-  allowedChars += includeUppercase ? uppercaseChars : "";
-  allowedChars += includeNumbers ? numberChars : "";
-  allowedChars += includeSymbols ? symbolsChars : "";
+const person2 = {
+  firstName: "Charles",
+  favFood: "Pizza",
+  age: 30,
+  sonName: "Charlies",
+  isEmployed: true,
+  eating: function () {
+    console.log(`Hi, I am Taylor Smith, I like eating ${this.favFood}`);
+  },
+  sayHello: function () {
+    console.log(`Hello he is my son, his name is ${this.sonName}`);
+  },
+};
 
-  if (length < 0) {
-    return `Password length must be at least 1`;
-  }
-  if (allowedChars.length === 0) {
-    return `At least 1 set of character must be selected`;
-  }
-
-  for (let i = 1; i < length; i++) {
-    const randomPassword = Math.floor(Math.random() * allowedChars.length);
-    password += allowedChars.charAt(randomPassword);
-  }
-  return password;
-}
-
-const numberLenght = 12;
-const includeLowercase = true;
-const includeUppercase = true;
-const includeNumbers = true;
-const includeSymbols = true;
-
-console.log(` ${generatePassword(
-  numberLenght,
-  includeLowercase,
-  includeUppercase,
-  includeNumbers,
-  includeSymbols
-)}
-  `);
+// person2.eating();
+// person2.sayHello();
+console.log(this);
