@@ -1,16 +1,13 @@
+// setTimeOut()
 
-// Closure 
+let timeoutID;
 
-function outer() {
-    let count = 0
-
-  function inner() {
-    count++
-    console.log(count);
-  }
-  return inner;
+function startTimer() {
+  timeoutID = setTimeout(() => window.alert('Hello'), 3000);
+  console.log('Started');
 }
 
-const fn = outer();
-fn(); // 1
-fn(); // 2
+function stopTimer() {
+  clearTimeout(timeoutID);
+  console.log('Stopped');
+}
