@@ -1,36 +1,18 @@
-const students = [
-  { id: 1, name: 'Alice', scores: [7, 8, 9] },
-  { id: 2, name: 'Taylor', scores: [8, 8, 9] },
-  { id: 3, name: 'Vincent', scores: [9, 8, 9] }
-];
+// sort()
 
-function findTopStudent(students) {
-  let topStudent = null;
-  let highestAverage = 0;
 
-  for (const student of students) {
-    const average = student.scores.reduce((a, b) => a + b, 0) / student.scores.length;
-    if (average > highestAverage) {
-      highestAverage = average;
-      topStudent = student;
-    }
-  }
-  if (topStudent) {
-    console.log(
-      `Student with the highest average scores: ${topStudent.id}, ${topStudent.name}, [${topStudent.scores}]`
-    );
-  }
-}
-findTopStudent(students);
+const person = [{name: 'John', age: 30, gpa: 3.5}, 
+                {name: 'Karis', age: 25, gpa: 2.2}, 
+                {name: 'Mia', age: 28, gpa: 4.0},
+                {name: 'Alex', age: 22, gpa: 3.8}, 
+                {name: 'Emily', age: 27, gpa: 3.0}];
 
-function findGreaterThan8(students) {
-  const result = [];
-  for (const student of students) {
-    const average = student.scores.reduce((a, b) => a + b, 0) / student.scores.length;
-    if (average > 8) {
-      result.push(student.name);
-    }
-  }
-  console.log(`Students with average scores greater than 8: ${result} `);
-}
-findGreaterThan8(students);
+// Sort by name
+// person.sort((a, b) => a.name.localeCompare(b.name));
+
+// Sort by age
+person.sort((a, b) => a.age - b.age);
+ 
+// sort by gpa
+person.sort((a, b) => a.gpa - b.gpa);
+console.log(person);
