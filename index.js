@@ -1,42 +1,36 @@
-// nested objects
+const students = [
+  { id: 1, name: 'Alice', scores: [7, 8, 9] },
+  { id: 2, name: 'Taylor', scores: [8, 8, 9] },
+  { id: 3, name: 'Vincent', scores: [9, 8, 9] }
+];
 
-// const person = {
-//   name: 'Vincent Nguyen',
-//   age: 18,
-//   job: 'Student',
-//   hobbies: ['Singing', 'running', 'coding'],
-//   address: {
-//     street: '172 Phu Dien Str',
-//     city: 'Hanoi',
-//     country: 'Vietnam',
-//   }
-// }
-//  for (const property in person.address) {
-//   console.log(person.address[property]);
-//  };
+function findTopStudent(students) {
+  let topStudent = null;
+  let highestAverage = 0;
 
-class Person{
-  
-  constructor(name, age, address) {
-    this.name = name;
-    this.age = age;
-    this.address = new Address(...address);
-
+  for (const student of students) {
+    const average = student.scores.reduce((a, b) => a + b, 0) / student.scores.length;
+    if (average > highestAverage) {
+      highestAverage = average;
+      topStudent = student;
     }
-}
-
-class Address{
-
-  constructor(street, city, country) {
-    this.street = street;
-    this.city = city;
-    this.country = country;
+  }
+  if (topStudent) {
+    console.log(
+      `Student with the highest average scores: ${topStudent.id}, ${topStudent.name}, [${topStudent.scores}]`
+    );
   }
 }
+findTopStudent(students);
 
-const person1 = new Person('Vincent Nguyen', 18,
-   '172 Phu Dien Str',
-   'Hanoi',
-   'Vietnam',);
-
-console.log(person1);
+function findGreaterThan8(students) {
+  const result = [];
+  for (const student of students) {
+    const average = student.scores.reduce((a, b) => a + b, 0) / student.scores.length;
+    if (average > 8) {
+      result.push(student.name);
+    }
+  }
+  console.log(`Students with average scores greater than 8: ${result} `);
+}
+findGreaterThan8(students);
