@@ -1,9 +1,21 @@
-// ES6 MODULE
 
-import {PI, getCircumference, getArea, getVolume} from './mathUtil.js';
 
-console.log("PI:", PI); 
+// ERROR
 
-console.log(getCircumference(5).toFixed(2));
-console.log(getArea(5).toFixed(2));
-console.log(getVolume(5).toFixed(2));
+const dividend = Number(window.prompt('Enter the divindend: '));
+const divisor = Number(window.prompt('Enter the divisor: '));
+
+
+ try{
+  if(isNaN(dividend || divisor)) {
+    throw new Error('Value must be a number');
+  }
+  if(divisor === 0) {
+    throw new Error('Divisor cannot be zero');
+  }
+ } catch(error) {
+  console.error(error);
+  alert(error);
+ } finally {
+  console.log('Operation completed');
+ }
