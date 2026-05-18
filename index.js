@@ -1,13 +1,17 @@
-// setTimeOut()
 
-let timeoutID;
+ 
+ function updateClock() {
+  const now = new Date();
 
-function startTimer() {
-  timeoutID = setTimeout(() => window.alert('Hello'), 3000);
-  console.log('Started');
-}
+  const hours = now.getHours().toString().padStart(2, 0);
+  const meridiem = hours > 12 ? "PM" : "AM";
 
-function stopTimer() {
-  clearTimeout(timeoutID);
-  console.log('Stopped');
-}
+  const minutes = now.getMinutes().toString().padStart(2, 0);
+  const seconds = now.getSeconds().toString().padStart(2, 0);
+  
+  const timeString = `${hours}:${minutes}:${seconds} ${meridiem}`;
+  document.getElementById('clock').textContent = timeString ;
+ }
+
+updateClock();
+setInterval(updateClock, 1000);

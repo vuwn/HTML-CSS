@@ -1,29 +1,26 @@
-#container {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  font-size: 1.5rem;
+body{
+  background-image: url(images/background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+#clock-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#clock{
+  font-family: monospace;
+  font-size: 3.5rem;
   font-weight: bold;
-}
-
-button {
-  font-size: 1.5rem;
-  padding: 10px 15px;
-  border-radius: 10px;
-  border: none;
-  background-color: hsl(200, 100%, 50%);
+  text-align: center;
   color: white;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: hsl(200, 100%, 40%);
-}
-
-#diceResult {
-  margin: 25px;
-}
-
-#diceImages img {
-  width: 150px;
-  margin: 5px;
+  backdrop-filter: blur(10px);
+  background-color: hsla(0, 0%, 100%, 0.1);
+  width: 100%;
 }
