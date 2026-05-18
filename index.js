@@ -1,21 +1,23 @@
+// CALCULATOR PROGRAMS
 
+const display = document.getElementById('display');
 
-// ERROR
+function appendToDisplay(input) {
+    display.value += input;
+}
 
-const dividend = Number(window.prompt('Enter the divindend: '));
-const divisor = Number(window.prompt('Enter the divisor: '));
+function clearDisplay() {
+    display.value = '';
+}
 
-
- try{
-  if(isNaN(dividend || divisor)) {
-    throw new Error('Value must be a number');
-  }
-  if(divisor === 0) {
-    throw new Error('Divisor cannot be zero');
-  }
- } catch(error) {
-  console.error(error);
-  alert(error);
- } finally {
-  console.log('Operation completed');
- }
+function calculate() {
+  if(display.value === '1+1') {
+    display.value = 3;
+  } else {  
+      try{
+        display.value = eval(display.value);
+      } catch(error) {
+         display.value = 'Error';
+     }
+    }
+}
