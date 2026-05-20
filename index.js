@@ -1,45 +1,16 @@
-// addEventListener: key events
+// addEventListener: hide, show the HTML
 
-const myBox = document.getElementById("myBox");
+const myButton = document.getElementById("myButton");
+const myImage = document.getElementById('myImage');
 
-//Change the context and style of ID
-    document.addEventListener("keydown", event => {
-        myBox.textContent = "😫";
-        myBox.style.backgroundColor = "tomato";
-    })
-    document.addEventListener("keyup", event => {
-        myBox.textContent = "😆";
-        myBox.style.backgroundColor = "lightblue";
-    })    
+myButton.addEventListener('click', event => {
 
-const moveAmount = 100;
-let x = 0;
-let y = 0;
+    if(myImage.style.visibility === `hidden`){
+        myImage.style.visibility = `visible`;
+        myButton.textContent = `Hide`;
+    } else {
+        myImage.style.visibility = `hidden`;
+        myButton.textContent = `Show`;
+    }
 
-    document.addEventListener("keydown", event => {
-        
-        event.preventDefault();
-        if(event.key.startsWith("Arrow")) {
-
-            switch(event.key) {
-                case "ArrowUp":
-                    y -= moveAmount;
-                    break;
-                case "ArrowDown":
-                    y += moveAmount;
-                    break;
-                case "ArrowLeft":
-                    x -= moveAmount;
-                    break;
-                case "ArrowRight":
-                    x += moveAmount;
-                    break;
-            }
-
-        }
-
-        myBox.style.top = `${y}px`;
-        myBox.style.left = `${x}px`;
-
-    })
-
+});

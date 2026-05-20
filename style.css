@@ -1,14 +1,8 @@
 body{
   margin: 0;
 }
-
-#myBox{
-  background-color: lightblue;
+#myImage{
   width: 300px;
-  height: 250px;
-  font-size: 9.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  height: 150px;
 }
+
