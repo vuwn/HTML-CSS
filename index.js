@@ -1,44 +1,43 @@
 
-// Nodelist 
+// classList 
 
-let buttons = document.querySelectorAll('.myButton');
-console.log(buttons);
+// add()
+// remove()
+// toggle(Remove if present, Add if not)
+// replace(oldClass, newClass)
+// contains
 
 
+let myButtons = document.querySelectorAll('.myButtons');
 
-// buttons.forEach(button => {
-//     button.addEventListener("click", event => {
-//         event.target.style.backgroundColor = "tomato"
-//     })
-// })
+myButtons.forEach(button => {
+    button.classList.add('enabled');
+})
 
-    buttons.forEach(button => {
-        button.addEventListener('mouseover', event => {
-            event.target.style.backgroundColor = 'hsl(193, 73%, 40%)'
-        })
+myButtons.forEach(button => {
+
+    button.addEventListener('mouseover', event => {
+        event.target.classList.toggle('hover');
     })
 
-    buttons.forEach(button => {
-        button.addEventListener('mouseout', event => {
-            event.target.style.backgroundColor = 'hsl(193, 73%, 50%)'
-        })
+})
+myButtons.forEach(button => {
+
+    button.addEventListener('mouseout', event => {
+        event.target.classList.toggle('hover');
     })
-
-// ADD A ELEMENT;
-
-    let newButton = document.createElement('button');
-    newButton.textContent = "Button 5";
-    newButton.classList = "myButton";
-    document.body.appendChild(newButton);
-    buttons = document.querySelectorAll('.myButton');
-    console.log(buttons);
     
-// REMOVE A ELEMENT
-// Node list will not update automatically reflect changes
-    buttons.forEach(button => {
-        button.addEventListener("click", event => {
-            event.target.remove();
-            buttons = document.querySelectorAll('.myButton');
-            console.log(buttons);
-        })
+})
+myButtons.forEach(button => {
+    button.addEventListener("click", (event) => {
+
+        if(event.target.classList.contains('disabled')) {
+            event.target.textContent += `😡`;
+        }
+        else {
+            event.target.classList.replace('enabled', 'disabled');
+        }
+
+
     })
+})

@@ -1,11 +1,25 @@
 
-.myButton{
+.myButtons{
   font-size: 3rem;
   margin: 10px;
   border: none;
   border-radius: 5px;
   padding: 10px 15px;
-  background-color: hsl(193, 73%, 50%);
+  /* background-color: hsl(193, 73%, 50%); */
   color: white;
 
+}
+
+.enabled{
+  background-color: hsl(193, 73%, 50%);
+  color: white;
+}
+
+.hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+.disabled{
+  background-color: hsl(0, 0%, 60%);
+  color: rgba(128, 128, 128, 0.794) 
 }
