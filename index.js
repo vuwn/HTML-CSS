@@ -1,37 +1,46 @@
-// IMAGE SLIDER
+// CALLBACK HELL
 
-const slides = document.querySelectorAll('.slides Img');
-let slideIndex = 0;
-let intervalID = null;
-
-//initializesSlider()
-document.addEventListener("DOMContentLoaded", initializeSlider)
-
-function initializeSlider() {  
-    if(slides.length > 0){
-    slides[slideIndex].classList.add('displaySlide');
-    intervalID = setInterval(nextSlide, 5000);
-    }
+function task1(callback){
+    setTimeout(() => {
+        console.log('Task 1 complete');
+        callback();
+    }, 2000);
 }
-function showSlide(index){
 
-    if(index >= slides.length){
-        slideIndex = 0;
-    }
-    else if(index < 0){
-        slideIndex = slides.length - 1;
-    }
-    slides.forEach(slide => {
-        slide.classList.remove('displaySlide');
+function task2(callback){
+    setTimeout(() => {
+        console.log('Task 2 complete');
+        callback();
+    }, 1000);
+}
+
+function task3(callback){
+    setTimeout(() => {
+        console.log('Task 3 complete');
+        callback();
+    }, 4000);
+}
+
+function task4(callback){
+    setTimeout(() => {
+        console.log('Task 4 complete');
+        callback();
+    }, 3000);
+}
+
+function task5(callback){
+    setTimeout(() => {
+        console.log('All tasks complete');
+        callback();
+    }, 1500);
+}
+
+task1(() => {
+    task2(() => {
+        task3(() => {
+            task4(() => {
+                task5(() => {})
+            })
+        })
     })
-    slides[slideIndex].classList.add('displaySlide');
-}
-function prevSlide(){
-    clearInterval(intervalID)
-    slideIndex--;
-    showSlide(slideIndex);
-}
-function nextSlide(){
-    slideIndex++;
-    showSlide(slideIndex);
-}
+})
