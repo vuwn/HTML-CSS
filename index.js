@@ -1,46 +1,57 @@
-// CALLBACK HELL
 
-function task1(callback){
-    setTimeout(() => {
-        console.log('Task 1 complete');
-        callback();
-    }, 2000);
-}
+// PROMISE 
+function walkDog(){
 
-function task2(callback){
-    setTimeout(() => {
-        console.log('Task 2 complete');
-        callback();
-    }, 1000);
-}
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
 
-function task3(callback){
-    setTimeout(() => {
-        console.log('Task 3 complete');
-        callback();
-    }, 4000);
-}
+            const dogWalk = false;
+            if(dogWalk){
+                resolve('You walk the dog 🐕');
+            } 
+            else {
+                reject(`YOU DID NOT WALK THE DOG`);
+            }
 
-function task4(callback){
-    setTimeout(() => {
-        console.log('Task 4 complete');
-        callback();
-    }, 3000);
-}
+        }, 1000);
 
-function task5(callback){
-    setTimeout(() => {
-        console.log('All tasks complete');
-        callback();
-    }, 1500);
-}
-
-task1(() => {
-    task2(() => {
-        task3(() => {
-            task4(() => {
-                task5(() => {})
-            })
-        })
     })
-})
+} 
+
+function cleanHouse(){
+
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+
+            const houseClean = true;
+            if(houseClean){
+                resolve('You clean the house 🧹');
+            } 
+            else {
+                reject(`YOU DID NOT CLEAN THE HOUSE`);
+            }
+            
+        }, 2000);
+
+    });
+}
+
+function takeOutTrash(){
+
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const trashTakenOut = true;
+            if(trashTakenOut){
+                resolve('You take out the trash!');
+            }
+            else{
+                reject('YOU DID NOT TAKE OUT THE TRASK');
+            }
+        }, 3000);
+    });
+
+} 
+
+walkDog().catch(error => {console.log(error); return cleanHouse()})
+         .then(value => {console.log(value); return takeOutTrash()})
+         .then(value => {console.log(value); console.log('You have finished all the tasks')});
