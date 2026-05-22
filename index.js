@@ -1,11 +1,12 @@
+// Async/Await = Async = make a function return a promise
+//             = Await = make an async function wait fot prommise
 
-// PROMISE 
 function walkDog(){
 
     return new Promise((resolve, reject) => {
         setTimeout(() => {
 
-            const dogWalk = false;
+            const dogWalk = true;
             if(dogWalk){
                 resolve('You walk the dog 🐕');
             } 
@@ -52,6 +53,23 @@ function takeOutTrash(){
 
 } 
 
-walkDog().catch(error => {console.log(error); return cleanHouse()})
-         .then(value => {console.log(value); return takeOutTrash()})
-         .then(value => {console.log(value); console.log('You have finished all the tasks')});
+ async function doChores(){
+
+    try{
+        const walkDogResult = await walkDog();
+        console.log(walkDogResult);
+
+        const cleanHouseResult = await cleanHouse();
+        console.log(cleanHouseResult);
+
+        const takeOutTrashResult = await takeOutTrash();
+        console.log(takeOutTrashResult);
+
+        console.log('You have finishes all the tasks');
+    } 
+    catch(error){
+        console.error(error);
+    }
+}
+
+doChores();
