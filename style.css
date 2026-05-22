@@ -1,42 +1,36 @@
-body{
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.slider{
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
 }
-h1{
+.slider img{
+  width: 100%;
+  display: none;
+}
+img.displaySlide{
+  display: block;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+.slider button{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 2rem;
-  color: rgba(36, 35, 35, 0.585);
-}
-.choices{
-  margin-bottom: 30px;
-}
-.choices button{
-  font-size: 6rem;
-  min-width: 160px;
-  margin: 0 10px;
-  border-radius: 250px;
-  background-color: hsl(200, 100%, 50%);
+  padding: 10px 15px;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  color: white;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.5s ease;
 }
-.choices button:hover{
-  background-color: hsl(200, 100%, 70%);
+.prev{
+  left: 0;
 }
-#playerDisplay, #computerDisplay{
-  font-size: 2.5rem;
+.next{
+  right: 0;
 }
-#resultDisplay{
-  font-size: 3rem;
-}
-.scoresDisplay{
-  font-size: 2rem;
-}
-.greenText, #playerScoresDisplay{
-  color: green;
-}
-.redText, #computerScoresDisplay{
-  color: red;
+@keyframes fade {
+  from {opacity: .5}
+  to {opacity: 1}
 }
