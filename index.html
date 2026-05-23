@@ -3,21 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
 <body>
-  
-  <div class="slider">
-    <div class="slides">
-        <img class='slide' src="images/Image1.png" alt="Image #1">
-        <img class='slide' src="images/Image2.png" alt="Image #2">
-        <img class='slide' src="images/Image3.png" alt="Image #3">
-    </div>
-  <button class="prev" onclick="prevSlide()">&#10094</button>
-  <button class="next" onclick="nextSlide()">&#10095</button>
-  </div>
-
+  <input type="text" id="pokemonName" placeholder="Enter a name pokemon">
+  <button onclick="fetchData()">Fetch Pokemon</button>
+  <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none">
   <script src="index.js"></script>
 </body>
 </html>

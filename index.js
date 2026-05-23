@@ -1,75 +1,32 @@
-// Async/Await = Async = make a function return a promise
-//             = Await = make an async function wait fot prommise
+// fetch = FUNCTION used for making HTTP requests to fetch resources
+//         (JSON, style data, images, files)
 
-function walkDog(){
+// fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+//      .then(response => response.json())
+//      .then(data => console.log(data));
 
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
+ async function fetchData(){
 
-            const dogWalk = true;
-            if(dogWalk){
-                resolve('You walk the dog 🐕');
-            } 
-            else {
-                reject(`YOU DID NOT WALK THE DOG`);
-            }
+     try{
+          const pokemonName = document.getElementById('pokemonName').value.toLowerCase();
+          const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
 
-        }, 1000);
+          if(!response.ok){
+               throw new Error("Could not fetch resources");
+          }
+          else{
+               const data = await response.json();
+               const pokemonSprite = data.sprites.front_default; // take the link of image from data
+               const imgElement = document.getElementById('pokemonSprite');
+               
+               imgElement.src = pokemonSprite;
+               imgElement.style.display = 'block';
+          }
+     }
+     catch(error){
+          console.error(error);
+     }
 
-    })
-} 
+ }
+     fetchData();
 
-function cleanHouse(){
-
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-
-            const houseClean = true;
-            if(houseClean){
-                resolve('You clean the house 🧹');
-            } 
-            else {
-                reject(`YOU DID NOT CLEAN THE HOUSE`);
-            }
-            
-        }, 2000);
-
-    });
-}
-
-function takeOutTrash(){
-
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            const trashTakenOut = true;
-            if(trashTakenOut){
-                resolve('You take out the trash!');
-            }
-            else{
-                reject('YOU DID NOT TAKE OUT THE TRASK');
-            }
-        }, 3000);
-    });
-
-} 
-
- async function doChores(){
-
-    try{
-        const walkDogResult = await walkDog();
-        console.log(walkDogResult);
-
-        const cleanHouseResult = await cleanHouse();
-        console.log(cleanHouseResult);
-
-        const takeOutTrashResult = await takeOutTrash();
-        console.log(takeOutTrashResult);
-
-        console.log('You have finishes all the tasks');
-    } 
-    catch(error){
-        console.error(error);
-    }
-}
-
-doChores();
