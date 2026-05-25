@@ -6,48 +6,54 @@
   <title>My Website</title>
 </head>
 <body>
-  <!--table-->
+  
+  <form>
 
-  <h3>Study Hours</h3>
-  <table border="1">
+    <label for="username">username:</label>
+    <input class="info" id="username" type="text" placeholder="Vincent"> <br>
 
-    <tr align="center" style="background-color: lightblue">
-      <th width="100">Sunday</th>
-      <th width="100">Monday</th>
-      <th width="100">Tuesday</th>
-      <th width="100">Wednesday</th>
-      <th width="100">Thursday</th>
-      <th width="100">Friday</th>
-      <th width="100">Saturday</th>
-    </tr>
+    <label for="password">password:</label>
+    <input class="info" id="password" type="password"> <br>
 
-    <tr align="center" style="background-color: aliceblue">
-      <td>Rest</td>
-      <td>7-5</td>
-      <td>7-5</td>
-      <td>7-5</td>
-      <td>7-5</td>
-      <td>7-5</td>
-      <td>7-5</td>
-    </tr>
-  </table>
+    <label for="email">email:</label>
+    <input class="info" id="email" type="email" placeholder="user@email.com"> <br>
+    
+    <label for="phone">phone #:</label>
+    <input class="info" id="phone" type="phone" placeholder="0123456789" pattern="[0-9]{10}"> <br>
+  
+    <label for="birthdate">birthdate:</label>
+    <input class="info" id="birthdate" type="date"> <br>
 
-  <hr>
-  <br></br>
+    <label for="quantity">quantity:</label>
+    <input class="info" id="quantity" type="number" min="0" max="15" value="1"> <br>
 
-  <!--button-->
-  <a href="lyrics.html">
-    <button style="font-size: 25px; background-color: rgba(0, 255, 255, 0.475); color: white; border-radius: 20px">Click me</button> <br>
-  </a>
+    <label class='info' id="title">title: </label>
 
-  <a onclick="doSomethings()"> 
-    <button id="greeting">Hello</button>
-  </a>
+    <label for="Mr.">Mr.s</label>
+    <input id="Mr." type="radio" name="title" value="Mr.">
+    <label for="Ms.">Ms.</label>
+    <input id="Ms." type="radio" name="title" value="Ms.">
+    <label for="PhD.">PhD.</label>
+    <input id="PhD." type="radio" name="title" value="PhD."> <br>
+    
+    <label for="payment">payment</label>
+    <select class="info"id="payment">
 
-  <script>
-    function doSomethings() {
-      document.getElementById('greeting').innerHTML = 'goodbye';
-    }
-  </script>
+      <option value="visa">visa</option>
+      <option value="mastercard">mastercard</option>
+      <option value="giftcard">giftcard</option> 
+
+    </select> <br>
+
+    <label for="Doyouloveme">Doyouloveme:</label>
+    <input class="info" id="Doyouloveme" type="checkbox" value="true"> <br>
+
+    <button type="reset">reset</button> <br>
+    <button type="submit" onsubmit="submit()">submit</button>
+    
+  </form>
+
+  <p id="yourInfo">Your info</p>
+  <script src="index.js"></script>
 </body>
 </html>
