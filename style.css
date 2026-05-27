@@ -1,13 +1,16 @@
 body{
-    border: 3px solid;
-    
+    background-image: url(images/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
 }
-#img1{
-    float: left;
-    margin-right: 10px;
+p{
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: monospace;
+    color: rgb(255, 70, 255);
 }
 
-#img2{
-    float: right;
-    margin-right: 10px;
+.container{
+    background-color: aqua;
 }
